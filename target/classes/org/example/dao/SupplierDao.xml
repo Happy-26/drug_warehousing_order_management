@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.dao.SupplierDao">
+    <insert id="insertSupplier">
+        insert into softwareanalysis.supplierdata (supplierName, contacts, contactTelephone,
+                                                   SupplierTelephone, address, zipCode, supplierBank,
+                                                   supplierBankAccount)
+        values (#{supplierName}, #{contacts}, #{contactTelephone}, #{SupplierTelephone},
+                #{address}, #{zipCode}, #{supplierBank}, #{supplierBankAccount})
+    </insert>
+
+    <select id="querySupplierByName" resultType="org.example.domain.Supplier">
+        select *
+        from softwareanalysis.supplierdata
+        where supplierName = #{supplierName}
+    </select>
+
+    <delete id="deleteSupplierByName">
+        delete
+        from softwareanalysis.supplierdata
+        where supplierName like #{supplierName}
+    </delete>
+
+    <select id="queryAllSuppliers" resultType="org.example.domain.Supplier">
+        select *
+        from softwareanalysis.supplierdata
+    </select>
+
+    <delete id="updateSupplier">
+        update softwareanalysis.supplierdata
+        set contacts =#{contacts},
+            contactTelephone=#{contactTelephone},
+            SupplierTelephone=#{SupplierTelephone},
+            address=#{address},
+            zipCode=#{zipCode},
+            supplierBank=#{supplierBank},
+            supplierBankAccount=#{supplierBankAccount}
+        where supplierName = #{supplierName};
+    </delete>
+</mapper>

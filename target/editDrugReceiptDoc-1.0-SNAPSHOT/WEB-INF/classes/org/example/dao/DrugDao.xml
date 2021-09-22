@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.dao.DrugDao">
+    <insert id="insertDrug">
+        insert into softwareanalysis.drugdata (drugId, drugName, unit, packageType)
+        values (#{drugId}, #{drugName}, #{unit}, #{packageType})
+    </insert>
+
+    <select id="queryDrugById" resultType="org.example.domain.Drug">
+        select *
+        from softwareanalysis.drugdata
+        where drugId = #{drugId}
+    </select>
+
+    <select id="queryDrugListById" resultType="org.example.domain.Drug">
+        select *
+        from softwareanalysis.drugdata
+        where drugId = #{drugId}
+    </select>
+
+    <delete id="updateDrug">
+        update softwareanalysis.drugdata
+        set drugName    = #{drugName},
+            unit        = #{unit},
+            packageType = #{packageType}
+        where drugId = #{drugId};
+    </delete>
+
+    <delete id="deleteDrug">
+        delete
+        from softwareanalysis.drugdata
+        where drugId = #{drugId};
+    </delete>
+
+    <select id="queryAllDrugs" resultType="org.example.domain.Drug">
+        select * from softwareanalysis.drugdata
+    </select>
+</mapper>

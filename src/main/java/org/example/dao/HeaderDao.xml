@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.dao.HeaderDao">
+    <insert id="insertHeader">
+        insert into softwareanalysis.header (warehousingId, indate, indatePerson, auditDate, reviewer, supplierNameRef)
+        values (#{warehousingId}, #{indate}, #{indatePerson}, #{auditDate}, #{reviewer}, #{supplierNameRef})
+    </insert>
+
+    <select id="selectAllHeader" resultType="org.example.domain.Header">
+        select *
+        from softwareanalysis.header
+    </select>
+
+    <delete id="deleteHeader">
+        delete
+        from softwareanalysis.header
+        where warehousingId = #{warehousingId}
+    </delete>
+
+    <delete id="updateHeader">
+        update softwareanalysis.header
+        set indate=#{indate},
+            indatePerson=#{indatePerson},
+            auditDate=#{auditDate},
+            reviewer=#{reviewer},
+            supplierNameRef=#{supplierNameRef}
+        where warehousingId = #{warehousingId}
+    </delete>
+
+    <select id="selectHeader" resultType="org.example.domain.Header">
+        select *
+        from softwareanalysis.header
+        where warehousingId = #{warehousingId}
+    </select>
+</mapper>
