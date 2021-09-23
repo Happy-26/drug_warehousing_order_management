@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class    Details {
+public class Details {
     private String orderNumber;        // 序号
     private Double purchase;            // 进价
     private Integer amount;             // 数量

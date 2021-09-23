@@ -7,6 +7,7 @@ import org.example.service.DetailsService;
 import org.example.service.DrugService;
 import org.example.service.HeaderService;
 import org.example.service.SupplierService;
+import org.example.dto.DrugWarehousingForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -92,7 +93,7 @@ public class FromController {
             }
 
             Details details = new Details(strings.get(0), Convert.toDouble(strings.get(5)),
-                    Convert.toInt(strings.get(6)), strings.get(8), header.getWarehousingId(),strings.get(1));
+                    Convert.toInt(strings.get(6)), strings.get(8), header.getWarehousingId(), strings.get(1));
             try {
                 // 添加新的数据
                 detailsService.addDetails(details);

@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 public class DetailsServiceImpl implements DetailsService {
     @Autowired
-    DetailsDao detailsDao ;
+    DetailsDao detailsDao;
 
     @Override
     public int addDetails(Details details) {
@@ -39,7 +39,7 @@ public class DetailsServiceImpl implements DetailsService {
 
     @Override
     public List<Details> queryDetailsByHeaderId(String warehousingId) {
-        return  (detailsDao.queryDetailsByHeaderId(warehousingId));
+        return (detailsDao.queryDetailsByHeaderId(warehousingId));
 
     }
 }

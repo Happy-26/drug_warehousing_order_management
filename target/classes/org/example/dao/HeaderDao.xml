@@ -22,10 +22,10 @@
     <delete id="updateHeader">
         update softwareanalysis.header
         set indate=#{indate},
-            indatePerson=#{indatePerson},
-            auditDate=#{auditDate},
-            reviewer=#{reviewer},
-            supplierNameRef=#{supplierNameRef}
+        indatePerson=#{indatePerson},
+        auditDate=#{auditDate},
+        reviewer=#{reviewer},
+        supplierNameRef=#{supplierNameRef}
         where warehousingId = #{warehousingId}
     </delete>
 

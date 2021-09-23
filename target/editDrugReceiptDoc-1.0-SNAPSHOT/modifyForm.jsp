@@ -1,6 +1,6 @@
-<%@ page import="org.example.domain.DrugWarehousingForm" %>
+<%@ page import="org.example.dto.DrugWarehousingForm" %>
 <%@ page import="cn.hutool.core.util.StrUtil" %>
-<%@ page import="org.example.domain.ReceiptItem" %>
+<%@ page import="org.example.dto.ReceiptItem" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="cn.hutool.core.convert.Convert" %>
@@ -249,14 +249,6 @@
 
 <script type="text/javascript">
     $(function () {
-            // 自动生成订单编号
-            var warehousingId = new Date;
-            $('#warehousingId').val('' + (warehousingId.getFullYear() % 2000) + (warehousingId.getMonth() + 1) +
-                warehousingId.getDate() + warehousingId.getHours() + warehousingId.getMinutes() + warehousingId.getSeconds());
-
-            // 初始化入库日期
-            $('#indate').val(warehousingId.getFullYear() + "-" + (warehousingId.getMonth() + 1) + "-" +
-                warehousingId.getDate());
 
             $("#supplierName").keydown, $("#supplierName").keyup(function () {
                 $.ajax({

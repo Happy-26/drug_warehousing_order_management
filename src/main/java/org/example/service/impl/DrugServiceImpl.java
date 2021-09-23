@@ -39,7 +39,7 @@ public class DrugServiceImpl implements DrugService {
 
     @Override
     public List<Drug> queryDrugListById(String id) {
-        return  drugDao.queryDrugListById(id);
+        return drugDao.queryDrugListById(id);
     }
 
     @Override

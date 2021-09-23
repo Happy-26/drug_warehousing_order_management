@@ -19,7 +19,7 @@ public class TestController {
 
     @RequestMapping("/test.do")
     @ResponseBody
-    public Drug test01(HttpServletRequest request, String drugId, Integer rows){
+    public Drug test01(HttpServletRequest request, String drugId, Integer rows) {
         System.out.println("=====================drugId" + drugId);
         System.out.println(rows);
         Drug drug = drugService.queryDrugById(drugId);

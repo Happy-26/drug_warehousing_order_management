@@ -5,10 +5,10 @@
 <mapper namespace="org.example.dao.SupplierDao">
     <insert id="insertSupplier">
         insert into softwareanalysis.supplierdata (supplierName, contacts, contactTelephone,
-                                                   SupplierTelephone, address, zipCode, supplierBank,
-                                                   supplierBankAccount)
+        SupplierTelephone, address, zipCode, supplierBank,
+        supplierBankAccount)
         values (#{supplierName}, #{contacts}, #{contactTelephone}, #{SupplierTelephone},
-                #{address}, #{zipCode}, #{supplierBank}, #{supplierBankAccount})
+        #{address}, #{zipCode}, #{supplierBank}, #{supplierBankAccount})
     </insert>
 
     <select id="querySupplierByName" resultType="org.example.domain.Supplier">
@@ -31,12 +31,12 @@
     <delete id="updateSupplier">
         update softwareanalysis.supplierdata
         set contacts =#{contacts},
-            contactTelephone=#{contactTelephone},
-            SupplierTelephone=#{SupplierTelephone},
-            address=#{address},
-            zipCode=#{zipCode},
-            supplierBank=#{supplierBank},
-            supplierBankAccount=#{supplierBankAccount}
+        contactTelephone=#{contactTelephone},
+        SupplierTelephone=#{SupplierTelephone},
+        address=#{address},
+        zipCode=#{zipCode},
+        supplierBank=#{supplierBank},
+        supplierBankAccount=#{supplierBankAccount}
         where supplierName = #{supplierName};
     </delete>
 </mapper>

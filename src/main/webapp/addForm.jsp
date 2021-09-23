@@ -56,7 +56,7 @@
 								<label class="col-sm-2 control-label"
                                        style="width: 100px;line-height: 32px">入库人员:</label>
 								<div class="col-sm-10" style="width: 200px">
-									<input type="text" class="form-control" name="indatePerson">
+									<input type="text" class="form-control" name="indatePerson" value="系统管理员" readonly>
 								</div>
 								<br>
 								<br>
@@ -144,7 +144,8 @@
 									<h3>总金额:</h3>
 								</label>
 								<label class="col-sm-2 control-label" style="width: 100px;line-height: 32px">
-									<h3><input id="money" value="0.0" readonly style="width: 100px;background-color: #eee" ></h3>
+									<h3><input id="money" value="0.0" readonly
+                                               style="width: 100px;background-color: #eee"></h3>
 								</label>
 								<br>
 								<br>
@@ -152,13 +153,13 @@
 								<label class="col-sm-2 control-label"
                                        style="width: 100px;line-height: 32px">审核人:</label>
 								<div class="col-sm-10" style="width: 200px">
-									<input type="text" class="form-control" name="reviewer">
+									<input type="text" class="form-control" name="reviewer" value="系统管理员" readonly>
 								</div>
 
 								<label class="col-sm-2 control-label"
                                        style="width: 100px;line-height: 32px">审核日期:</label>
 								<div class="col-sm-10" style="width: 200px">
-									<input type="text" class="form-control" name="auditDate">
+									<input type="text" id="auditDate" class="form-control" name="auditDate">
 								</div>
 								<br>
 								<br>
@@ -221,6 +222,8 @@
             // 初始化入库日期
             $('#indate').val(warehousingId.getFullYear() + "-" + (warehousingId.getMonth() + 1) + "-" +
                 warehousingId.getDate());
+			$('#auditDate').val(warehousingId.getFullYear() + "-" + (warehousingId.getMonth() + 1) + "-" +
+				warehousingId.getDate());
 
             $("#supplierName").keydown, $("#supplierName").keyup(function () {
                 $.ajax({
@@ -244,32 +247,32 @@
         },
     )
 
-	function tdval(item) {
-    	// 获取当前td所在行
-		var rows = $(item.parentNode).parent().prevAll().length-1;
-		var drugId = 'drugId'+rows;
-		$.ajax({
-			url: "queryDrugByIdAjax.do",
-			data: {
-				drugId: document.getElementById(drugId).value,
-				rows: rows
-			},
-			type: "post",
-			dataType: "json",
-			success: function (res) {
-				$.each(arr, function (i, v) {
-					// alert(i,rows)
-					if(i == rows){
-						v.drugName = $("#drugName"+i).value;
-						v.unit = $("#unit"+i).value;
-						v.packageType = $("#packageType"+i).value;
-					}
-				});
-				$('#drugName' + rows).val(res.drugName);
-				$('#unit' + rows).val(res.unit);
-				$('#packageType' + rows).val(res.packageType);
-			}
-		})
+    function tdval(item) {
+        // 获取当前td所在行
+        var rows = $(item.parentNode).parent().prevAll().length - 1;
+        var drugId = 'drugId' + rows;
+        $.ajax({
+            url: "queryDrugByIdAjax.do",
+            data: {
+                drugId: document.getElementById(drugId).value,
+                rows: rows
+            },
+            type: "post",
+            dataType: "json",
+            success: function (res) {
+                $.each(arr, function (i, v) {
+                    // alert(i,rows)
+                    if (i == rows) {
+                        v.drugName = $("#drugName" + i).value;
+                        v.unit = $("#unit" + i).value;
+                        v.packageType = $("#packageType" + i).value;
+                    }
+                });
+                $('#drugName' + rows).val(res.drugName);
+                $('#unit' + rows).val(res.unit);
+                $('#packageType' + rows).val(res.packageType);
+            }
+        })
     }
 </script>
 </body>

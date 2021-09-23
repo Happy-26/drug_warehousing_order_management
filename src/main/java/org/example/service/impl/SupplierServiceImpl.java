@@ -30,7 +30,7 @@ public class SupplierServiceImpl implements SupplierService {
     }
 
     @Override
-    public int  deleteSupplierByName(String supplierName) {
+    public int deleteSupplierByName(String supplierName) {
         if (supplierDao.deleteSupplierByName(supplierName))
             return 1;
         else
@@ -39,7 +39,7 @@ public class SupplierServiceImpl implements SupplierService {
 
     @Override
     public Supplier querySupplierByName(String supplierName) {
-        return  (supplierDao.querySupplierByName(supplierName));
+        return (supplierDao.querySupplierByName(supplierName));
     }
 
     @Override

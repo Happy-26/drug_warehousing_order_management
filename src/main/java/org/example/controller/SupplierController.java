@@ -20,7 +20,7 @@ public class SupplierController {
     private SupplierService supplierService;
 
     @RequestMapping("/querySupplierByName.do")
-    public ModelAndView querySupplierByName(String supplierName){
+    public ModelAndView querySupplierByName(String supplierName) {
         ModelAndView mav = new ModelAndView();
         Supplier supplier = supplierService.querySupplierByName(supplierName);
         mav.addObject("supplier", supplier);
@@ -30,18 +30,19 @@ public class SupplierController {
 
     /**
      * 处理前端ajax请求，返回supplier对象
+     *
      * @param supplierName 前端传近来的要查询的供应商名字
      * @return 返回查询到的供应商信息
      */
     @RequestMapping("/querySupplierByNameAjax.do")
     @ResponseBody
-    public Supplier querySupplierByNameAjax(String supplierName){
+    public Supplier querySupplierByNameAjax(String supplierName) {
         Supplier supplier = supplierService.querySupplierByName(supplierName);
         return supplier;
     }
 
     @RequestMapping("/queryAllSuppliers.do")
-    public ModelAndView queryAllSuppliers(){
+    public ModelAndView queryAllSuppliers() {
         ModelAndView mav = new ModelAndView();
         List<Supplier> supplierList = supplierService.queryAllSuppliers();
         mav.addObject("supplierList", supplierList);
@@ -57,13 +58,13 @@ public class SupplierController {
 
 
     @RequestMapping("/deleteSupplierByName.do")
-    public String deleteSupplierByName(String supplierName){
+    public String deleteSupplierByName(String supplierName) {
         supplierService.deleteSupplierByName(supplierName);
         return "forward:queryAllSuppliers.do";
     }
 
     @RequestMapping("/modifySupplierByName.do")
-    public String modifySupplierByName(Supplier supplier){
+    public String modifySupplierByName(Supplier supplier) {
         supplierService.modifySupplier(supplier);
         return "forward:queryAllSuppliers.do";
     }

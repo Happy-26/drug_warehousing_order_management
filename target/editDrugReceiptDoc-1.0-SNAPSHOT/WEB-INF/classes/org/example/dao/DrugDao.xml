@@ -22,9 +22,9 @@
 
     <delete id="updateDrug">
         update softwareanalysis.drugdata
-        set drugName    = #{drugName},
-            unit        = #{unit},
-            packageType = #{packageType}
+        set drugName = #{drugName},
+        unit = #{unit},
+        packageType = #{packageType}
         where drugId = #{drugId};
     </delete>
 
@@ -35,6 +35,7 @@
     </delete>
 
     <select id="queryAllDrugs" resultType="org.example.domain.Drug">
-        select * from softwareanalysis.drugdata
+        select *
+        from softwareanalysis.drugdata
     </select>
 </mapper>

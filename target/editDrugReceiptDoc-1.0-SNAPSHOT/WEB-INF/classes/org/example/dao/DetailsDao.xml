@@ -9,15 +9,24 @@
     </insert>
 
     <select id="queryDetailsByHeaderId" resultType="org.example.domain.Details">
-        select * from softwareanalysis.receiptitem where warehousingId = #{warehousingId}
+        select *
+        from softwareanalysis.receiptitem
+        where warehousingId = #{warehousingId}
     </select>
 
     <delete id="updateDetails">
-        update softwareanalysis.receiptitem set orderNumber = #{orderNumber}, purchase = #{purchase}, amount = #{amount},
-        effectiveDate = #{effectiveDate}, drugId = #{drugId}, warehousingId = #{warehousingId}
+        update softwareanalysis.receiptitem
+        set orderNumber   = #{orderNumber},
+            purchase      = #{purchase},
+            amount        = #{amount},
+            effectiveDate = #{effectiveDate},
+            drugId        = #{drugId},
+            warehousingId = #{warehousingId}
     </delete>
 
     <delete id="deleteDetails">
-        delete from softwareanalysis.receiptitem where warehousingId = #{warehousingId}
+        delete
+        from softwareanalysis.receiptitem
+        where warehousingId = #{warehousingId}
     </delete>
 </mapper>
