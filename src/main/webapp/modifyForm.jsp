@@ -182,10 +182,9 @@
 										<input type="hidden" id="count" name="count" value="0"/>
 										<input type="hidden" id="hang" name="hang" value="0"/>
 									</span>
-									<button id="button" style="width: 150px;height: 40px"
-                                            onclick="tableListData()">保存</button>
+
 									<button type="submit" style="width: 150px;height: 40px"
-                                            onclick="javascript:document.f.action='modifyForm.do';document.f.submit();">提交</button>
+                                            onclick="javascript:tableListData();document.f.action='modifyForm.do';document.f.submit();">提交</button>
 								</center>
 								</form>
 						</span>
