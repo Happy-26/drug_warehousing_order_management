@@ -30,7 +30,7 @@ public class HeaderServiceImpl implements HeaderService {
     }
 
     @Override
-    public int deleteHeader(Long warehousingId) {
+    public int deleteHeader(String warehousingId) {
         if (headerDao.deleteHeader(warehousingId))
             return 1;
         else
@@ -38,7 +38,7 @@ public class HeaderServiceImpl implements HeaderService {
     }
 
     @Override
-    public Header queryHeaderById(Long warehousingId) {
+    public Header queryHeaderById(String warehousingId) {
         return headerDao.selectHeader(warehousingId);
 
     }

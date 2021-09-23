@@ -43,7 +43,7 @@ public class DrugController {
     }
 
     @RequestMapping("/queryDrugById.do")
-    public ModelAndView queryDrugById(Integer drugId) {
+    public ModelAndView queryDrugById(String drugId) {
         ModelAndView mav = new ModelAndView();
         Drug drug = drugService.queryDrugById(drugId);
         mav.addObject("drug", drug);
@@ -59,12 +59,12 @@ public class DrugController {
      */
     @RequestMapping("/queryDrugByIdAjax.do")
     @ResponseBody
-    public Drug queryDrugByIdAjax(Integer drugId, Integer rows) {
+    public Drug queryDrugByIdAjax(String drugId, Integer rows) {
         return drugService.queryDrugById(drugId);
     }
 
     @RequestMapping("/deleteDrugById.do")
-    public String deleteDrugById(Integer drugId) {
+    public String deleteDrugById(String drugId) {
         drugService.deleteDrugById(drugId);
         return "forward:queryAllDrugs.do";
     }

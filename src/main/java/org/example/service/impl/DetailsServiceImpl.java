@@ -30,7 +30,7 @@ public class DetailsServiceImpl implements DetailsService {
     }
 
     @Override
-    public int deleteDetails(Long warehousingId) {
+    public int deleteDetails(String warehousingId) {
         if (detailsDao.deleteDetails(warehousingId))
             return 1;
         else
@@ -38,7 +38,7 @@ public class DetailsServiceImpl implements DetailsService {
     }
 
     @Override
-    public List<Details> queryDetailsByHeaderId(Long warehousingId) {
+    public List<Details> queryDetailsByHeaderId(String warehousingId) {
         return  (detailsDao.queryDetailsByHeaderId(warehousingId));
 
     }

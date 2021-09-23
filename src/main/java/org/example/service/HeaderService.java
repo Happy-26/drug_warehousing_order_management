@@ -7,8 +7,8 @@ import java.util.List;
 public interface HeaderService {
     int addHeader(Header header);
     int modifyHeader(Header header);
-    int deleteHeader(Long warehousingId);
-    Header queryHeaderById(Long warehousingId);
+    int deleteHeader(String warehousingId);
+    Header queryHeaderById(String warehousingId);
     List<Header> queryAllHeader();
 
 

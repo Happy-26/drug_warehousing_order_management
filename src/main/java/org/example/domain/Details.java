@@ -10,13 +10,13 @@ import org.springframework.stereotype.Component;
 @NoArgsConstructor
 @AllArgsConstructor
 public class    Details {
-    private Integer orderNumber;        // 序号
+    private String orderNumber;        // 序号
     private Double purchase;            // 进价
     private Integer amount;             // 数量
     private String effectiveDate;       // 有效日期
 
-    private Long warehousingId;      // 入库单编号
-    private Integer drugId;             // 药品编号
+    private String warehousingId;      // 入库单编号
+    private String drugId;             // 药品编号
 
     @Override
     public String toString() {

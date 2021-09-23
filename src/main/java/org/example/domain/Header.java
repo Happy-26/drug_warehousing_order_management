@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Header {
-    private Long warehousingId;      // 入库单编号
+    private String warehousingId;      // 入库单编号
     private String indate;              // 入库日期
     private String indatePerson;        // 入库人员
     private String auditDate;           // 审核日期

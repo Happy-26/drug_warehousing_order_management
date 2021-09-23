@@ -42,7 +42,7 @@ public class FromController {
     }
 
     @RequestMapping("/queryFormById.do")
-    public ModelAndView queryFormById(Long warehousingId) {
+    public ModelAndView queryFormById(String warehousingId) {
         ModelAndView mav = new ModelAndView();
         DrugWarehousingForm dwf = new DrugWarehousingForm();
 
@@ -91,8 +91,8 @@ public class FromController {
                 strings.add(split[i].split(":")[1]);
             }
 
-            Details details = new Details(Convert.toInt(strings.get(0)), Convert.toDouble(strings.get(5)),
-                    Convert.toInt(strings.get(6)), strings.get(8), header.getWarehousingId(),Convert.toInt(strings.get(1)));
+            Details details = new Details(strings.get(0), Convert.toDouble(strings.get(5)),
+                    Convert.toInt(strings.get(6)), strings.get(8), header.getWarehousingId(),strings.get(1));
             try {
                 // 添加新的数据
                 detailsService.addDetails(details);
@@ -108,7 +108,7 @@ public class FromController {
     }
 
     @RequestMapping("/deleteForm.do")
-    public String deleteForm(Long warehousingId) {
+    public String deleteForm(String warehousingId) {
         headerService.deleteHeader(warehousingId);
         detailsService.deleteDetails(warehousingId);
         return "forward:queryAllForm.do";
@@ -134,8 +134,8 @@ public class FromController {
                 strings.add(split[i].split(":")[1]);
             }
 
-            Details details = new Details(Convert.toInt(strings.get(0)), Convert.toDouble(strings.get(5)),
-                    Convert.toInt(strings.get(6)), strings.get(8), header.getWarehousingId(), Convert.toInt(strings.get(1)));
+            Details details = new Details(strings.get(0), Convert.toDouble(strings.get(5)),
+                    Convert.toInt(strings.get(6)), strings.get(8), header.getWarehousingId(), strings.get(1));
             try {
                 detailsService.addDetails(details);
             } catch (Exception e) {

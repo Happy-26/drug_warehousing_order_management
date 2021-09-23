@@ -7,8 +7,8 @@ import java.util.List;
 
 public interface HeaderDao {
     boolean insertHeader(Header header);
-    boolean deleteHeader(Long warehousingId);
+    boolean deleteHeader(String warehousingId);
     boolean updateHeader(Header header);
-    Header selectHeader(Long warehousingId);
+    Header selectHeader(String warehousingId);
     List<Header> selectAllHeader();
 }

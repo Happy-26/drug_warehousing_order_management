@@ -30,7 +30,7 @@ public class DrugServiceImpl implements DrugService {
     }
 
     @Override
-    public int deleteDrugById(Integer drugId) {
+    public int deleteDrugById(String drugId) {
         if (drugDao.deleteDrug(drugId))
             return 1;
         else
@@ -38,12 +38,12 @@ public class DrugServiceImpl implements DrugService {
     }
 
     @Override
-    public List<Drug> queryDrugListById(Integer id) {
+    public List<Drug> queryDrugListById(String id) {
         return  drugDao.queryDrugListById(id);
     }
 
     @Override
-    public Drug queryDrugById(Integer id) {
+    public Drug queryDrugById(String id) {
         return drugDao.queryDrugById(id);
     }
 

@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Drug {
-    private Integer drugId;             // 药品编号
+    private String drugId;             // 药品编号
     private String drugName;            // 药品名称
     private String unit;                // 单位
     private String packageType;         // 包装

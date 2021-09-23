@@ -3,6 +3,7 @@
 <%@ page import="org.example.domain.ReceiptItem" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="cn.hutool.core.convert.Convert" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -182,10 +183,9 @@
 										<input type="hidden" id="count" name="count" value="0"/>
 										<input type="hidden" id="hang" name="hang" value="0"/>
 									</span>
-									<button id="button" style="width: 150px;height: 40px"
-                                            onclick="tableListData()">保存</button>
+
 									<button type="submit" style="width: 150px;height: 40px"
-                                            onclick="javascript:document.f.action='modifyForm.do';document.f.submit();">提交</button>
+                                            onclick="javascript:tableListData();document.f.action='modifyForm.do';document.f.submit();">提交</button>
 								</center>
 								</form>
 						</span>
@@ -206,7 +206,7 @@
             DrugWarehousingForm dwf = (DrugWarehousingForm) request.getAttribute("dwf");
             List<ReceiptItem> receiptItemList = new ArrayList<>();
             for(int i = 0; i < dwf.getDetails().size(); i++) {
-              receiptItemList.add(new ReceiptItem(dwf.getDetails().get(i).getOrderNumber(),
+              receiptItemList.add(new ReceiptItem(Convert.toInt(dwf.getDetails().get(i).getOrderNumber()),
               dwf.getDrugList().get(i).getDrugId(),
               dwf.getDrugList().get(i).getDrugName(),dwf.getDrugList().get(i).getUnit(),dwf.getDrugList().get(i).getPackageType(),
               dwf.getDetails().get(i).getPurchase(),dwf.getDetails().get(i).getAmount(), 888.8,

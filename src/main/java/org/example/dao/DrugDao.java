@@ -7,8 +7,8 @@ import java.util.List;
 public interface DrugDao {
     boolean insertDrug(Drug drug);
     boolean updateDrug(Drug drug);
-    boolean deleteDrug(Integer drugId);
-    List<Drug> queryDrugListById(Integer drugId);
+    boolean deleteDrug(String drugId);
+    List<Drug> queryDrugListById(String drugId);
     List<Drug> queryAllDrugs();
-    Drug queryDrugById(Integer drugId);
+    Drug queryDrugById(String drugId);
 }
