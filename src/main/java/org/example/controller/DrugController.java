@@ -1,10 +1,7 @@
 package org.example.controller;
 
-import org.example.domain.Drug;
-import org.example.service.DetailsService;
+import org.example.entity.Drug;
 import org.example.service.DrugService;
-import org.example.service.HeaderService;
-import org.example.service.SupplierService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

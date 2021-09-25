@@ -37,7 +37,7 @@
                     <div class="col-sm-12">
 						<span class="ibox float-e-margins" style="text-align: center">
 							<div class="ibox-title" align="center">
-								<h1><b>药品入库单</b></h1>
+								<h1><b>添加药品入库单</b></h1>
 							</div>
 								<form name="f" action="javascript:;" method="post">
 

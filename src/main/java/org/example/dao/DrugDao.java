@@ -1,6 +1,6 @@
 package org.example.dao;
 
-import org.example.domain.Drug;
+import org.example.entity.Drug;
 
 import java.util.List;
 

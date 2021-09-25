@@ -8,7 +8,7 @@
         values (#{orderNumber}, #{purchase}, #{amount}, #{effectiveDate}, #{drugId}, #{warehousingId})
     </insert>
 
-    <select id="queryDetailsByHeaderId" resultType="org.example.domain.Details">
+    <select id="queryDetailsByHeaderId" resultType="org.example.entity.Details">
         select *
         from softwareanalysis.receiptitem
         where warehousingId = #{warehousingId}

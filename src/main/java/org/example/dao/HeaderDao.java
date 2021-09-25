@@ -1,7 +1,7 @@
 package org.example.dao;
 
 
-import org.example.domain.Header;
+import org.example.entity.Header;
 
 import java.util.List;
 

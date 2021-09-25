@@ -1,7 +1,7 @@
 package org.example.service.impl;
 
 import org.example.dao.DrugDao;
-import org.example.domain.Drug;
+import org.example.entity.Drug;
 import org.example.service.DrugService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

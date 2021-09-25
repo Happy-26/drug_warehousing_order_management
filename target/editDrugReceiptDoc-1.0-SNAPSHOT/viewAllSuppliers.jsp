@@ -74,6 +74,16 @@
             }
         %>
     ];
+
+    <%
+        if (request.getAttribute("msg") != null) {
+    %>
+    // 未查到供应商提示
+    alert("<%=request.getAttribute("msg")%>")
+    <%
+    }
+    %>
+
     //前台分页的样子
     $('#histroyBox').CJJTable({
         'title': ["供应商名称", "地址", "邮编", "联系人", "联系电话", "操作"],//thead中的标题 必填

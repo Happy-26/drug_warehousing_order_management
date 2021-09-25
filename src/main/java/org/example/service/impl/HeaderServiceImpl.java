@@ -1,7 +1,7 @@
 package org.example.service.impl;
 
 import org.example.dao.HeaderDao;
-import org.example.domain.Header;
+import org.example.entity.Header;
 import org.example.service.HeaderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

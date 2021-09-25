@@ -2,7 +2,7 @@ package org.example.controller;
 
 import cn.hutool.core.convert.Convert;
 import cn.hutool.core.util.StrUtil;
-import org.example.domain.*;
+import org.example.entity.*;
 import org.example.service.DetailsService;
 import org.example.service.DrugService;
 import org.example.service.HeaderService;

@@ -1,6 +1,6 @@
 package org.example.service;
 
-import org.example.domain.Header;
+import org.example.entity.Header;
 
 import java.util.List;
 

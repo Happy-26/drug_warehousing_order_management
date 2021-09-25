@@ -1,7 +1,7 @@
 package org.example.service.impl;
 
 import org.example.dao.SupplierDao;
-import org.example.domain.Supplier;
+import org.example.entity.Supplier;
 import org.example.service.SupplierService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

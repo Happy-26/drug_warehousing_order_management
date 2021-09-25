@@ -1,6 +1,6 @@
 package org.example.service;
 
-import org.example.domain.Details;
+import org.example.entity.Details;
 
 import java.util.List;
 
