@@ -48,6 +48,13 @@ public class FromController {
         DrugWarehousingForm dwf = new DrugWarehousingForm();
 
         Header header = headerService.queryHeaderById(warehousingId);
+
+        if (header == null) {
+            mav.setViewName("forward:queryAllForm.do");
+            mav.addObject("msg", "未查询到改入库单");
+            return mav;
+        }
+
         dwf.setHeader(header);
 
         Supplier supplier = supplierService.querySupplierByName(header.getSupplierNameRef());
@@ -64,6 +71,8 @@ public class FromController {
         dwf.setDrugList(drugList);
 
         mav.addObject("dwf", dwf);
+
+
         mav.setViewName("modifyForm");
         return mav;
     }
@@ -151,6 +160,5 @@ public class FromController {
         // 转发到查询所有入库单请求
         return "forward:queryAllForm.do";
     }
-
 
 }

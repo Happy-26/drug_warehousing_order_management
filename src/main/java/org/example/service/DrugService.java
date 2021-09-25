@@ -9,8 +9,6 @@ public interface DrugService {
 
     int modifyDrug(Drug drug);
 
-    List<Drug> queryDrugListById(String id);
-
     List<Drug> queryAllDrugs();
 
     Drug queryDrugById(String id);

@@ -19,10 +19,18 @@ public class SupplierController {
     @Autowired
     private SupplierService supplierService;
 
+    // 根据名字查询供应商
     @RequestMapping("/querySupplierByName.do")
     public ModelAndView querySupplierByName(String supplierName) {
         ModelAndView mav = new ModelAndView();
         Supplier supplier = supplierService.querySupplierByName(supplierName);
+
+        if (supplier == null) {
+            mav.setViewName("forward:queryAllSuppliers.do");
+            mav.addObject("msg", "未查询到供应商信息");
+            return mav;
+        }
+
         mav.addObject("supplier", supplier);
         mav.setViewName("modifySupplier");
         return mav;
@@ -41,6 +49,7 @@ public class SupplierController {
         return supplier;
     }
 
+    // 查询所有供应商
     @RequestMapping("/queryAllSuppliers.do")
     public ModelAndView queryAllSuppliers() {
         ModelAndView mav = new ModelAndView();
@@ -50,19 +59,27 @@ public class SupplierController {
         return mav;
     }
 
+    // 增加供应商
     @RequestMapping("/addSupplier.do")
-    public String addSupplier(Supplier supplier) {
-        supplierService.addSupplier(supplier);
-        return "forward:queryAllSuppliers.do";
+    public ModelAndView addSupplier(Supplier supplier) {
+        ModelAndView mav = new ModelAndView();
+        try {
+            supplierService.addSupplier(supplier);
+        } catch (Exception e){
+            mav.addObject("msg", "重复添加供应商");
+        }
+        mav.setViewName("forward:queryAllSuppliers.do");
+        return mav;
     }
 
-
+    // 删除供应商
     @RequestMapping("/deleteSupplierByName.do")
     public String deleteSupplierByName(String supplierName) {
         supplierService.deleteSupplierByName(supplierName);
         return "forward:queryAllSuppliers.do";
     }
 
+    // 修改供应商
     @RequestMapping("/modifySupplierByName.do")
     public String modifySupplierByName(Supplier supplier) {
         supplierService.modifySupplier(supplier);

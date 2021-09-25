@@ -11,8 +11,6 @@ public interface DrugDao {
 
     boolean deleteDrug(String drugId);
 
-    List<Drug> queryDrugListById(String drugId);
-
     List<Drug> queryAllDrugs();
 
     Drug queryDrugById(String drugId);

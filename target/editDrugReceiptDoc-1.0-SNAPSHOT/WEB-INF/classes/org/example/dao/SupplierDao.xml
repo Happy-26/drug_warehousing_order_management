@@ -5,8 +5,7 @@
 <mapper namespace="org.example.dao.SupplierDao">
     <insert id="insertSupplier">
         insert into softwareanalysis.supplierdata (supplierName, contacts, contactTelephone,
-        SupplierTelephone, address, zipCode, supplierBank,
-        supplierBankAccount)
+        SupplierTelephone, address, zipCode, supplierBank, supplierBankAccount)
         values (#{supplierName}, #{contacts}, #{contactTelephone}, #{SupplierTelephone},
         #{address}, #{zipCode}, #{supplierBank}, #{supplierBankAccount})
     </insert>

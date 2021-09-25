@@ -14,12 +14,6 @@
         where drugId = #{drugId}
     </select>
 
-    <select id="queryDrugListById" resultType="org.example.domain.Drug">
-        select *
-        from softwareanalysis.drugdata
-        where drugId = #{drugId}
-    </select>
-
     <delete id="updateDrug">
         update softwareanalysis.drugdata
         set drugName = #{drugName},

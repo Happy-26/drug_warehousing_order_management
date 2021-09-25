@@ -43,7 +43,7 @@
                     <div class="col-sm-12">
 						<span class="ibox float-e-margins" style="text-align: center">
 							<div class="ibox-title" align="center">
-								<h1><b>药品入库单</b></h1>
+								<h1><b>修改药品入库单</b></h1>
 							</div>
 								<form name="f" action="javascript:;" method="post">
 
@@ -52,7 +52,7 @@
 								<label class="col-sm-2 control-label"
                                        style="width: 100px;line-height: 32px">入库单编号:</label>
 								<div class="col-sm-10" style="width: 200px">
-									<input type="text" class="form-control" name="warehousingId"
+									<input type="text" class="form-control" name="warehousingId" readonly
                                            value="${dwf.header.warehousingId}">
 								</div>
 								<label class="col-sm-2 control-label"

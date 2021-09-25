@@ -68,7 +68,7 @@
                     <div class="col-sm-12">
 						<span class="ibox float-e-margins" style="text-align: center">
 							<div class="ibox-title" align="center">
-								<h1><b>添加药品</b></h1>
+								<h1><b>修改药品</b></h1>
 								<br>
 								<br>
 								<center>

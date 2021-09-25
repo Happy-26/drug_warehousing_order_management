@@ -72,6 +72,16 @@
             }
         %>
 	];
+
+	<%
+        if (request.getAttribute("msg") != null) {
+    %>
+	// 未查到药品提示
+	alert("<%=request.getAttribute("msg")%>")
+	<%
+    }
+    %>
+
 	//前台分页的样子
 	$('#histroyBox').CJJTable({
 		'title': ["药品编号", "药品名称", "药品单位", "药品包装","操作"],//thead中的标题 必填

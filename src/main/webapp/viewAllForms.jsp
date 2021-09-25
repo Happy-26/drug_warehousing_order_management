@@ -34,7 +34,6 @@
 
 <body>
 
-<body>
 <br/>
 <div align="center">
     <form action="queryFormById.do">
@@ -68,6 +67,15 @@
             }
         %>
     ];
+
+    <%
+        if (request.getAttribute("msg") != null) {
+    %>
+    // 未查到入库单提示
+    alert("<%=request.getAttribute("msg")%>")
+    <%
+    }
+    %>
     //前台分页的样子
     $('#histroyBox').CJJTable({
         'title': ["入库单编号", "入库日期", "入库人员", "审核日期", "审核人", "操作"],//thead中的标题 必填
