@@ -8,7 +8,7 @@
         values (#{warehousingId}, #{indate}, #{indatePerson}, #{auditDate}, #{reviewer}, #{supplierNameRef})
     </insert>
 
-    <select id="selectAllHeader" resultType="org.example.domain.Header">
+    <select id="selectAllHeader" resultType="org.example.entity.Header">
         select *
         from softwareanalysis.header
     </select>
@@ -29,7 +29,7 @@
         where warehousingId = #{warehousingId}
     </delete>
 
-    <select id="selectHeader" resultType="org.example.domain.Header">
+    <select id="selectHeader" resultType="org.example.entity.Header">
         select *
         from softwareanalysis.header
         where warehousingId = #{warehousingId}

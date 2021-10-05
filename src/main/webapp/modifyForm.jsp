@@ -63,8 +63,8 @@
 								<label class="col-sm-2 control-label"
                                        style="width: 100px;line-height: 32px">入库人员:</label>
 								<div class="col-sm-10" style="width: 200px">
-									<input type="text" class="form-control" name="indatePerson"
-                                           value="${dwf.header.warehousingId}">
+									<input type="text" class="form-control" name="indatePerson" readonly
+                                           value="${dwf.header.indatePerson}">
 								</div>
 								<br>
 								<br>
@@ -72,7 +72,7 @@
 								<label class="col-sm-2 control-label"
                                        style="width: 100px;line-height: 32px">供应商名称:</label>
 								<div class="col-sm-10" style="width: 200px">
-									<input type="text" class="form-control" name="supplierName" readonly
+									<input type="text" class="form-control" name="supplierName"
                                            value="${dwf.supplier.supplierName}">
 								</div>
 
@@ -166,7 +166,7 @@
 								<label class="col-sm-2 control-label"
                                        style="width: 100px;line-height: 32px">审核人:</label>
 								<div class="col-sm-10" style="width: 200px">
-									<input type="text" class="form-control" name="reviewer"
+									<input type="text" class="form-control" name="reviewer" readonly
                                            value="${dwf.header.reviewer}">
 								</div>
 

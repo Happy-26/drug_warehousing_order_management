@@ -4,10 +4,10 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <typeAliases>
-        <typeAlias type="org.example.domain.Header" alias="header"/>
-        <typeAlias type="org.example.domain.Details" alias="details"/>
-        <typeAlias type="org.example.domain.Supplier" alias="supplier"/>
-        <typeAlias type="org.example.domain.Drug" alias="drug"/>
+        <typeAlias type="org.example.entity.Header" alias="header"/>
+        <typeAlias type="org.example.entity.Details" alias="details"/>
+        <typeAlias type="org.example.entity.Supplier" alias="supplier"/>
+        <typeAlias type="org.example.entity.Drug" alias="drug"/>
     </typeAliases>
 
     <mappers>

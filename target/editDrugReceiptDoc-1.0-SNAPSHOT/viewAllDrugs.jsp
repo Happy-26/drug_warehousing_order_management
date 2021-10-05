@@ -1,6 +1,6 @@
-<%@ page import="org.example.domain.Header" %>
+<%@ page import="org.example.entity.Header" %>
 <%@ page import="java.util.List" %>
-<%@ page import="org.example.domain.Drug" %>
+<%@ page import="org.example.entity.Drug" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.

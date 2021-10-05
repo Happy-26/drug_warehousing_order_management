@@ -10,7 +10,7 @@
         #{address}, #{zipCode}, #{supplierBank}, #{supplierBankAccount})
     </insert>
 
-    <select id="querySupplierByName" resultType="org.example.domain.Supplier">
+    <select id="querySupplierByName" resultType="org.example.entity.Supplier">
         select *
         from softwareanalysis.supplierdata
         where supplierName = #{supplierName}
@@ -22,7 +22,7 @@
         where supplierName like #{supplierName}
     </delete>
 
-    <select id="queryAllSuppliers" resultType="org.example.domain.Supplier">
+    <select id="queryAllSuppliers" resultType="org.example.entity.Supplier">
         select *
         from softwareanalysis.supplierdata
     </select>
